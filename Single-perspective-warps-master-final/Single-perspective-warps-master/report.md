@@ -158,5 +158,19 @@ The warping process uses four energy terms:
 #### Output:
 ![alt text](<output-multiple.jpeg>)
 
+## Metrics
+
+We compared the results of our approach using some standard well known image stitching algorithms: simple homography warp and APAP. All three algorithms were applied on three image stitching datasets found online.
+
+Metrics used:
+- RMSE: Root mean squared error of between point correspondance of a point in target image (obtained from point features matching) and the point obtained after applying the warp to the original point.
+
+- % Outliers: Pixel-wise error where a pixel x in I is an outlier if no pixel within a 4-pixel neighbourhood of t(x) in I’​ has an intensity difference of less than 10 grey levels. The warping error is the percentage of outliers in the overlapping region.
+
+The results are plotted below. Our algorithm performed better than the other two in every dataset.
+
+![alt text](<rmse.png>)
+![alt text](<outliers.png>)
+
 ## Citation
 [1] Tianli Liao and Nan Li. Single-perspective warps in natural image stitching. IEEE Transactions on Image Processing, 29:724–735, 2020.
